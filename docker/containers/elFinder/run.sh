@@ -11,3 +11,6 @@ docker run --restart unless-stopped \
         -v /data:/data \
         -v $(pwd)/connector.minimal.php:/var/www/php/connector.minimal.php \
         leadz/elfinder
+
+# workaround of permission issue during downloading files
+docker exec -it elFinder chmod -R 755 /var/tmp/nginx
